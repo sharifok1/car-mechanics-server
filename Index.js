@@ -58,8 +58,8 @@ async function run() {
   run().catch(console.dir);
 
 
-app.get('/',(req ,res)=>{
-    res.send('genious car mechanic project is ready.. start now')
+app.get('/', (req ,res)=>{
+    res.send('genious car mechanic project is ready.but not working on heroku')
 })
 
 app.listen(port,()=>{

@@ -21,35 +21,35 @@ async function run() {
         const serviceCollection = database.collection("services");
         // create a document to insert
        //POST API---------------------------------post
-    //    app.post('/services', async(req,res)=>{
-    //        const service = req.body;
-    //        console.log('hit the post',service)
-    //        const result = await serviceCollection.insertOne(service);
-    //         console.log(result)
-    //     res.json(result)
-    //       }) 
+       app.post('/services', async(req,res)=>{
+           const service = req.body;
+           console.log('hit the post',service)
+           const result = await serviceCollection.insertOne(service);
+            console.log(result)
+        res.json(result)
+          }) 
         
-    //     //GET API -----------------------------get
-    //     app.get('/services', async (req, res)=>{
-    //         const cursor = serviceCollection.find({});
-    //         const services = await cursor.toArray();
-    //         res.send(services)
-    //     })
+        //GET API -----------------------------get
+        app.get('/services', async (req, res)=>{
+            const cursor = serviceCollection.find({});
+            const services = await cursor.toArray();
+            res.send(services)
+        })
 
-    //     // get Single API//---------------------single api
-    //     app.get('/services/:id', async(req, res)=>{
-    //         const id = req.params.id;
-    //         const query = {_id:ObjectId(id)};
-    //         const service = await serviceCollection.findOne(query);
-    //         res.json(service);
-    //     })
-    //     //delet API ----------------------------delete
-    //     app.delete('/services/:id', async (req,res)=>{
-    //         const id = req.params.id;
-    //         const query = {_id:ObjectId(id)}
-    //         const result = await serviceCollection.deleteOne(query);
-    //         res.json(result);
-    //     })
+        // get Single API//---------------------single api
+        app.get('/services/:id', async(req, res)=>{
+            const id = req.params.id;
+            const query = {_id:ObjectId(id)};
+            const service = await serviceCollection.findOne(query);
+            res.json(service);
+        })
+        //delet API ----------------------------delete
+        app.delete('/services/:id', async (req,res)=>{
+            const id = req.params.id;
+            const query = {_id:ObjectId(id)}
+            const result = await serviceCollection.deleteOne(query);
+            res.json(result);
+        })
       } 
     finally {
     //   await client.close();//can ignor
@@ -59,6 +59,7 @@ async function run() {
 
 
 app.get('/', (req ,res)=>{
+    
     res.send('genious car mechanic project is ready. Now it should be work')
 })
 

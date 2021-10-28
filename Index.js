@@ -3,7 +3,7 @@ const { MongoClient } = require('mongodb');
 const ObjectId = require('mongodb').ObjectId
 const cors = require('cors')
 require('dotenv').config()
-const app = express ();
+const app = express();
 // middle wire////
 app.use(cors());
 app.use(express.json())
@@ -60,7 +60,7 @@ async function run() {
 
 app.get('/', (req ,res)=>{
     
-    res.send('genious car mechanic project is ready. Now it should be work')
+    res.send('nothing is working, yeah working')
 })
 
 app.listen(port,()=>{

@@ -59,7 +59,7 @@ async function run() {
 
 
 app.get('/', (req ,res)=>{
-    res.send('genious car mechanic project is ready.but not working on heroku')
+    res.send('genious car mechanic project is ready. Now it should be work')
 })
 
 app.listen(port,()=>{
